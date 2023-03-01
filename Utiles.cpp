@@ -32,14 +32,6 @@ void debugPrint(String msg, uint16_t val) {
     Serial.print(" #");
   }
 }
-/*void debugPrint(String msg, float val) {
-  if (PRINT == 1) {
-    Serial.print(msg);
-    Serial.print("# ");
-    Serial.print(val);
-    Serial.print(" #");
-  }
-}*/
 void debugPrint(String msg) {
   if (PRINT == 1) {
     Serial.print(msg);
@@ -84,3 +76,8 @@ byte calculateCheckSum(uint8_t* data,uint8_t tam) {
   }
   return checksum;
 }
+
+float mapfloat(float x, float in_min, float in_max, float out_min, float out_max){
+ return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+
